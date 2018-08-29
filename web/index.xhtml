@@ -3,10 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Ejercicio alcance bean</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form>
+            1. alcance peticion:
+            <h:inputText id="alcancePeticion" value="#{peticion.valor}"/>
+            <br/>
+            <h:commandButton actionListener="#{controlador.changeVal}" value="coloca valores"/>
+            <br/>
+            <h:commandButton action="#{controlador.changePag}" value="muestra valores"/>
+            <br/>
+            <h3>Despliegue de valores en la misma vista</h3>
+            <br/>
+            Valor Alcance Peticion: <span style="background: yellow">#{peticion.valor}</span>
+        </h:form>
     </h:body>
 </html>
 

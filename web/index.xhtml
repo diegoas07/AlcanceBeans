@@ -10,13 +10,20 @@
             1. alcance peticion:
             <h:inputText id="alcancePeticion" value="#{peticion.valor}"/>
             <br/>
+            2. alcance View:
+            <h:inputText id="alcanceView" value="#{vista.valor}"/>
+            <br/>
             <h:commandButton actionListener="#{controlador.changeVal}" value="coloca valores"/>
             <br/>
             <h:commandButton action="#{controlador.changePag}" value="muestra valores"/>
             <br/>
             <h3>Despliegue de valores en la misma vista</h3>
             <br/>
-            Valor Alcance Peticion: <span style="background: yellow">#{peticion.valor}</span>
+            Valor Alcance Peticion: 
+            <span style="background: yellow">#{peticion.valor}</span>
+            <br/>
+            Valor Alcance View
+            <span style="background: aqua">#{vista.valor}</span>
         </h:form>
     </h:body>
 </html>

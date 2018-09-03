@@ -6,16 +6,17 @@
 package beans.backing;
 
 import beans.alcances.BeanAlcancePeticion;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import beans.alcances.BeanAlcanceVista;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
-import javax.inject.Inject;
 
 /**
  *
  * @author Desarrollo2
  */
-@Named(value = "controlador")
+@ManagedBean(name = "controlador")
 @RequestScoped
 public class Controlador {
 
@@ -25,9 +26,14 @@ public class Controlador {
     public Controlador() {
     }
     
-    @Inject
+    @ManagedProperty(value = "#{peticion}")
     private BeanAlcancePeticion peticion;
+    
+    @ManagedProperty(value = "#{vista}")
+    private BeanAlcanceVista vista;
 
+    
+    
     /**
      * @return the peticion
      */
@@ -45,13 +51,32 @@ public class Controlador {
     
     public void changeVal(ActionEvent e){
         System.out.println("Valores almacenados en cada Bean");
+
+        // logica alcance request
         System.out.println("valor alcance request: "+ peticion.getValor());
+        
+        // logica alcance view
+        System.out.println("valor alcance view: "+ vista.getValor());
     }
     
     public String changePag (){
         System.out.println("Cambio de PAgina");
         return "despliega";// despliega.xhtml
         
+    }
+
+    /**
+     * @return the vista
+     */
+    public BeanAlcanceVista getVista() {
+        return vista;
+    }
+
+    /**
+     * @param vista the vista to set
+     */
+    public void setVista(BeanAlcanceVista vista) {
+        this.vista = vista;
     }
     
 }

@@ -5,41 +5,45 @@
  */
 package beans.alcances;
 
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-
-
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Desarrollo2
  */
-@ManagedBean(name = "peticion")
-@RequestScoped
-public class BeanAlcancePeticion {
+@ManagedBean(name = "vista")
+@ViewScoped
+public class BeanAlcanceVista {
 
     /**
-     * Creates a new instance of BeanAlcancePeticion
+     * Creates a new instance of BeanAlcanceVista
      */
-    public BeanAlcancePeticion() {
+    public BeanAlcanceVista() {
+    
+        
     }
     
-    private String valor;
+        private String valor;
 
     /**
-     * @return the valor
+     * Get the value of valor
+     *
+     * @return the value of valor
      */
     public String getValor() {
         return valor;
     }
 
     /**
-     * @param valor the valor to set
+     * Set the value of valor
+     *
+     * @param valor new value of valor
      */
     public void setValor(String valor) {
         this.valor = valor;
     }
-    
-    
+
     
 }

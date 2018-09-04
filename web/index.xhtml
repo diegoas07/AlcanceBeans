@@ -13,6 +13,12 @@
             2. alcance View:
             <h:inputText id="alcanceView" value="#{vista.valor}"/>
             <br/>
+            3. alcance Sesion:
+            <h:inputText id="alcanceSesion" value="#{sesion.valor}"/>
+            <br/>
+            3. alcance aplicacion
+            <h:inputText id="alcanceAplicacion" value="#{aplicacion.valor}"/>
+            <br/>
             <h:commandButton actionListener="#{controlador.changeVal}" value="coloca valores"/>
             <br/>
             <h:commandButton action="#{controlador.changePag}" value="muestra valores"/>
@@ -24,6 +30,12 @@
             <br/>
             Valor Alcance View
             <span style="background: aqua">#{vista.valor}</span>
+            <br/>
+            Valor Alcance Sesion:
+            <span style="background: blue">#{sesion.valor}</span>
+            <br/>
+            Valor Alcance Aplicacion:
+            <span style="background: chartreuse">#{aplicacion.valor}</span>
         </h:form>
     </h:body>
 </html>

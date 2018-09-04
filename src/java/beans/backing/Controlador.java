@@ -5,7 +5,9 @@
  */
 package beans.backing;
 
+import beans.alcances.BeanAlcanceAplicacion;
 import beans.alcances.BeanAlcancePeticion;
+import beans.alcances.BeanAlcanceSesion;
 import beans.alcances.BeanAlcanceVista;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -32,7 +34,11 @@ public class Controlador {
     @ManagedProperty(value = "#{vista}")
     private BeanAlcanceVista vista;
 
+    @ManagedProperty(value = "#{sesion}")
+    private BeanAlcanceSesion sesion;
     
+    @ManagedProperty(value = "#{aplicacion}")
+    private BeanAlcanceAplicacion aplicacion;
     
     /**
      * @return the peticion
@@ -57,10 +63,17 @@ public class Controlador {
         
         // logica alcance view
         System.out.println("valor alcance view: "+ vista.getValor());
+        
+        // logica alcance sesion
+        System.out.println("valor alcance view: "+ sesion.getValor());
+        
+        // logica alcance aplicacion
+        System.out.println("valor alcance aplicacion: "+ aplicacion.getValor());
+
     }
     
     public String changePag (){
-        System.out.println("Cambio de PAgina");
+        System.out.println("Cambio de Pagina");
         return "despliega";// despliega.xhtml
         
     }
@@ -78,5 +91,36 @@ public class Controlador {
     public void setVista(BeanAlcanceVista vista) {
         this.vista = vista;
     }
+
+    /**
+     * @return the sesion
+     */
+    public BeanAlcanceSesion getSesion() {
+        return sesion;
+    }
+
+    /**
+     * @param sesion the sesion to set
+     */
+    public void setSesion(BeanAlcanceSesion sesion) {
+        this.sesion = sesion;
+    }
+
+    /**
+     * @return the aplicacion
+     */
+    public BeanAlcanceAplicacion getAplicacion() {
+        return aplicacion;
+    }
+
+    /**
+     * @param aplicacion the aplicacion to set
+     */
+    public void setAplicacion(BeanAlcanceAplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
+    
+    
+    
     
 }
